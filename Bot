@@ -1,61 +1,63 @@
-/**
-* @author ProCoderMew
-* @warn Do not edit code or edit credits
-*/
 
-module.exports.config = {
-	name: "covid",
-	version: "2.1.1",
-	hasPermssion: 0,
-	credits: "ProCoderMew",
-	description: "Lấy thông tin về tình hình dịch bệnh COVID-19",
-	commandCategory: "other",
-	usages: "",
-	cooldowns: 5,
-    dependencies: {
-        "axios": ""
-    },
-    envConfig: {
-        APIKEY: "Meew_efmKGJZWpQ2BLRczfZtWYj2ri4HIdE
-        "
-    }
-};
-
-module.exports.run = async function({ api, event }) {
-    const axios = global.nodemodule["axios"];
-    const { APIKEY } = global.configModule.covid;
-    var { data } = await axios.get("https://meewmeew.info/covid?apikey=" + APIKEY);
-    if (data.success == false) return api.sendMessage(data.error, event.threadID);
-    var world = data.world,
-        vn = data.vietnam,
-        news = data.news,
-        nhiemtg = world.cases,
-        chettg = world.deaths,
-        hoiphuctg = world.recovered,
-        nhiemvn = vn.cases,
-        chetvn = vn.deaths,
-        hoiphucvn = vn.recovered,
-        dieutrivn = vn.recovering,      
-        ptchetvn = Math.round(chetvn.replace(/\./g,"") * 100 / nhiemvn.replace(/\./g,"")),
-        pthoiphucvn = Math.round(hoiphucvn.replace(/\./g,"") * 100 / nhiemvn.replace(/\./g,"")),
-        ptchettg = Math.round(chettg.replace(/\./g,"") * 100 / nhiemtg.replace(/\./g,"")),
-        pthoiphuctg = Math.round(hoiphuctg.replace(/\./g,"") * 100 / nhiemtg.replace(/\./g,"")),
-        pthoiphucvn = pthoiphucvn.toString().split(".")[0],
-        ptdieutrivn = (100 - pthoiphucvn - ptchetvn).toString().split(".")[0];
-    ptchetvn = ptchetvn.toString().split(".")[0];
-    pthoiphuctg = pthoiphuctg.toString().split(".")[0];
-    ptchettg = ptchettg.toString().split(".")[0];    
-    return api.sendMessage(
-        '====== Thế Giới ======\n' +
-        `😷 Nhiễm: ${nhiemtg}\n` +
-        `💚 Hồi phục: ${hoiphuctg} (${pthoiphuctg}%)\n` +
-        `💀 Tử vong: ${chettg} (${ptchettg}%)\n` +
-        '====== Việt Nam ======\n' +
-        `😷 Nhiễm: ${nhiemvn}\n` +
-        `💉 Đang điều trị: ${dieutrivn} (${ptdieutrivn}%)\n` +
-        `💚 Hồi phục: ${hoiphucvn} (${pthoiphucvn}%)\n` +
-        `💀 Tử vong: ${chetvn} (${ptchetvn}%)\n\n` +
-        `Tin tức: ${news.vietnam}\n` +
-        `Cập nhật: ${data.time}`, event.threadID
-    );
-}
+⌄
+⌄
+⌄
+⌄
+⌄
+[
+	},
+	{
+		"key": "oo",
+		"value": "v1",
+		"domain": "facebook.com",
+		"path": "/",
+		"hostOnly": false,
+		"creation": "2022-01-21T02:05:31.560Z",
+		"lastAccessed": "2022-01-21T02:05:35.671Z"
+	},
+	{
+		"key": "c_user",
+		"value": "100074723367937",
+		"domain": "facebook.com",
+		"path": "/",
+		"hostOnly": false,
+		"creation": "2022-01-21T02:05:31.573Z",
+		"lastAccessed": "2022-01-21T02:05:35.671Z"
+	},
+	{
+		"key": "spin",
+		"value": "r.1004959636_b.trunk_t.1642728194_s.1_v.2_",
+		"domain": "facebook.com",
+		"path": "/",
+		"hostOnly": false,
+		"creation": "2022-01-21T02:05:31.584Z",
+		"lastAccessed": "2022-01-21T02:05:35.671Z"
+	},
+	{
+		"key": "presence",
+		"value": "C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1642730430623%2C%22v%22%3A1%7D",
+		"domain": "facebook.com",
+		"path": "/",
+		"hostOnly": false,
+		"creation": "2022-01-21T02:05:31.589Z",
+		"lastAccessed": "2022-01-21T02:05:35.671Z"
+	},
+	{
+		"key": "xs",
+		"value": "22%3AKjd6qwWkWMYMrw%3A2%3A1642728187%3A-1%3A-1%3A%3AAcWsaqqYE8AQPAkqfZRvWjtoHA_I1ptpcbeUGSpo5Q",
+		"domain": "facebook.com",
+		"path": "/",
+		"hostOnly": false,
+		"creation": "2022-01-21T02:05:31.594Z",
+		"lastAccessed": "2022-01-21T02:05:35.671Z"
+	},
+	{
+		"key": "fr",
+		"value": "0akkLqMvTuhoFkMX2.AWU24UHwXiSdRsV6mfe0l1uBNWg.Bh6hSi.Fv.AAA.0.0.Bh6hSi.AWUhpeYZe2w",
+		"domain": "facebook.com",
+		"path": "/",
+		"hostOnly": false,
+		"creation": "2022-01-21T02:05:31.600Z",
+		"lastAccessed": "2022-01-21T02:05:35.671Z"
+	}
+]
